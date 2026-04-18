@@ -1,0 +1,41 @@
+[project]
+name = "simtool-manage"
+version = "0.1.0"
+description = "Meta-analytic simulation agent: literature -> reconciled meta-model -> runnable iDynoMiCS 2 config"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "pint>=0.23",
+    "pyyaml>=6.0",
+    "keyring>=25.0",
+    "python-dotenv>=1.0",
+    "anthropic>=0.40",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+]
+
+[project.scripts]
+simtool = "simtool.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+]
+ara = [
+    "matplotlib>=3.8",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["simtool*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

@@ -1,0 +1,536 @@
+target_system: "iDynoMiCS 2 nitrifying biofilm reference model v0.1"
+
+# PRISMA search steps, in order.
+steps:
+  - step_name: "Identification"
+    description: >
+      50 PMC esearch queries via NCBI E-utilities (open-access filter),
+      covering nitrifying biofilms/granules, AOB/NOB/comammox kinetics,
+      pure-culture nitrifier physiology, MABR, aerobic granular sludge,
+      partial nitritation-anammox models, and targeted author/organism
+      queries (Nitrospira inopinata, Kits, Daims, Spieck lineage).
+    database: "PMC (NCBI E-utilities)"
+    query: "multiple — see agent run log"
+    n_in: 0
+    n_out: 1242
+    timestamp: "2026-04-18"
+  - step_name: "Abstract screening"
+    description: >
+      esummary on 1242 unique PMC IDs, efetch for 448 on-topic titles,
+      keyword-scored abstracts for Monod parameters (Ks/affinity, mu_max,
+      yield, decay/maintenance, diffusion, density, EPS, biofilm model).
+    database: "PMC (NCBI E-utilities)"
+    n_in: 1242
+    n_out: 46
+    timestamp: "2026-04-18"
+
+# Per-paper screening outcomes. Every entry has decision=screened_in; full-text
+# review will promote to included or demote to excluded_eligibility.
+entries:
+
+  # ---------- open-access PMC candidates ----------
+
+  - doi: "10.1002/wer.70059"
+    pmc_id: "PMC11928780"
+    title: "Maximizing the efficiency of single-stage partial nitrification/Anammox granule processes and balancing microbial competition using insights of a numerical model study"
+    year: 2025
+    journal: "Water Environment Research"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "1-D granule model; abstract lists mu_ANA, b_ANA, K_O2_ANA, K_NH4_ANA, K_NO2_ANA, biomass fractions — direct PN/A parametrization."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1016/j.wroa.2020.100048"
+    pmc_id: "PMC7058409"
+    title: "Limited simultaneous nitrification-denitrification (SND) in aerobic granular sludge systems treating municipal wastewater: Mechanisms and practical implications"
+    year: 2020
+    journal: "Water Research X"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Mathematical AGS modeling with calibrated AOB/NOB kinetics; oxygen penetration and rates in municipal granules."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/srep27576"
+    pmc_id: "PMC4895179"
+    title: "Assessment of Heterotrophic Growth Supported by Soluble Microbial Products in Anammox Biofilm using Multidimensional Modeling"
+    year: 2016
+    journal: "Scientific Reports"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "1-D and 2-D anammox biofilm model; yields, decay, SMP parameters for heterotroph-anammox interactions."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.70.5.3024-3040.2004"
+    pmc_id: "PMC404447"
+    title: "Particle-based multidimensional multispecies biofilm model"
+    year: 2004
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Picioreanu/Kreft/van Loosdrecht multispecies biofilm model — direct iDynoMiCS ancestor; documents AOB/NOB kinetic inputs, biofilm density, diffusion coefficients."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.70.3.1641-1650.2004"
+    pmc_id: "PMC368389"
+    title: "Ecophysiological interaction between nitrifying bacteria and heterotrophic bacteria in autotrophic nitrifying biofilms (MAR-FISH)"
+    year: 2004
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Okabe/Kindaichi MAR-FISH nitrifier biofilm paper; species distribution and activity rates for AOB/NOB."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.71.7.3987-3994.2005"
+    pmc_id: "PMC1169061"
+    title: "Fate of 14C-labeled microbial products derived from nitrifying bacteria in autotrophic nitrifying biofilms"
+    year: 2005
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Quantifies SMP fate and heterotroph cross-feeding; supports EPS/SMP yield parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/aem.59.6.1951-1954.1993"
+    pmc_id: "PMC182191"
+    title: "Quantitative Determination of the Spatial Distribution of Nitrosomonas europaea and Nitrobacter agilis Cells Immobilized in kappa-Carrageenan Gel Beads"
+    year: 1993
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Early quantitative AOB/NOB spatial segregation in gel-bead biofilm analogue; cell density distributions."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.03163-15"
+    pmc_id: "PMC4784051"
+    title: "Relative Abundance of Nitrotoga spp. in a Biofilter of a Cold-Freshwater Aquaculture Plant"
+    year: 2016
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Nitrotoga NOB in cold-water biofilter — low-temperature NOB parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/ismej.2016.63"
+    pmc_id: "PMC5113852"
+    title: "Metagenomic analysis of rapid gravity sand filter microbial communities suggests novel physiology of Nitrospira spp."
+    year: 2016
+    journal: "The ISME Journal"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Rapid sand filter Nitrospira physiology; community activity and inferred kinetics context for NOB biofilms."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2016.01869"
+    pmc_id: "PMC5118430"
+    title: "Ecophysiology and Comparative Genomics of Nitrosomonas mobilis Ms1 Isolated from Autotrophic Nitrifying Granules"
+    year: 2016
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Reports Km(NH4+), Km(O2) and max ammonia oxidation rates for granule-derived N. mobilis — direct AOB biofilm parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1264/jsme2.ME19140"
+    pmc_id: "PMC7308565"
+    title: "Quantification and Phylogenetic Analysis of Ammonia Oxidizers on Biofilm Carriers in a Full-Scale Wastewater Treatment Plant"
+    year: 2020
+    journal: "Microbes and Environments"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "qPCR/amoA quantification of AOB/comammox on full-scale biofilm carriers — abundance ratios."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2020.551925"
+    pmc_id: "PMC7506033"
+    title: "Autotrophic Fixed-Film Systems Treating High Strength Ammonia Wastewater"
+    year: 2020
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "MBBR biofilm nitrification under high NH4; rates for Nitrosomonas/Nitrospira/Nitrobacter biofilms."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2022.817986"
+    pmc_id: "PMC9127996"
+    title: "Differential Responses of the Catalytic Efficiency of Ammonia and Nitrite Oxidation to Changes in Temperature"
+    year: 2022
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Vmax(app) and Km for NH3 oxidation (AOB) and NO2- oxidation (Nitrobacter, Nitrospira) across temperatures — temperature-dependent Ks/mu_max."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.02734-14"
+    pmc_id: "PMC4277589"
+    title: "Comparison of oxidation kinetics of nitrite-oxidizing bacteria: nitrite availability as a key factor in niche differentiation"
+    year: 2015
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Spieck-group Km and Vmax for six NOB pure cultures (Nitrobacter, Nitrospira, Nitrotoga, Ca. Nitromaritima) — canonical NOB kinetic reference."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1002/bit.28045"
+    pmc_id: "PMC9303882"
+    title: "Biochemistry shapes growth kinetics of nitrifiers and defines their activity under specific environmental conditions"
+    year: 2022
+    journal: "Biotechnology and Bioengineering"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Database analysis of Y_XS, mu_max, K_NH3, K_O2 for AOB/NOB/comammox — tailor-made for meta-analytic ingestion."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/s41396-019-0408-x"
+    pmc_id: "PMC6775968"
+    title: "Affinity informs environmental cooperation between ammonia-oxidizing archaea (AOA) and anaerobic ammonia-oxidizing (Anammox) bacteria"
+    year: 2019
+    journal: "The ISME Journal"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "k_m,NH4 and k_m,O2 and mu_max for N. viennensis (AOA); k_m,NH4, k_m,NO2, k_i,O2 for anammox."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/nature23679"
+    pmc_id: "PMC5600814"
+    title: "Kinetic analysis of a complete nitrifier reveals an oligotrophic lifestyle"
+    year: 2017
+    journal: "Nature"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Kits et al. — canonical comammox N. inopinata K_m(NH3) and comparison with N. maritimus and N. europaea."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/s41467-026-68747-z"
+    pmc_id: "PMC12954068"
+    title: "Ammonia oxidizers offset acidification stress via adaptive substrate affinity in aquatic ecosystems"
+    year: 2026
+    journal: "Nature Communications"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "pH-dependent affinity shifts in N. maritimus and AOB; AOA/AOB affinity under pH stress."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1093/ismejo/wrag040"
+    pmc_id: "PMC12998223"
+    title: "Kinetic plasticity of nitrite-oxidizing bacteria containing cytoplasmic nitrite oxidoreductase"
+    year: 2026
+    journal: "The ISME Journal"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "pH- and substrate-dependent Km(app) for N. winogradskyi cNXR-NOB; updates classic NOB Ks values."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1021/acs.est.3c00636"
+    pmc_id: "PMC10470456"
+    title: "Nitrite Oxidation in Wastewater Treatment: Microbial Adaptation and Suppression Challenges"
+    year: 2023
+    journal: "Environmental Science & Technology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Review with compiled affinity constants for Nitrospira vs Nitrobacter — secondary source of parameter ranges."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2022.1022899"
+    pmc_id: "PMC9797979"
+    title: "Photoinhibition of comammox reaction in Nitrospira inopinata in a dose- and wavelength-dependent manner"
+    year: 2022
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "N. inopinata substrate affinity and light-inhibition constants; comammox kinetic reference."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/s41396-020-00840-7"
+    pmc_id: "PMC8115276"
+    title: "Ammonia oxidation at pH 2.5 by a new gammaproteobacterial ammonia-oxidizing bacterium"
+    year: 2021
+    journal: "The ISME Journal"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Acidic AOB kinetics — pH-extreme Monod parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2021.671480"
+    pmc_id: "PMC8312096"
+    title: "Nutrient-Limited Enrichments of Nitrifiers From Soil Yield Consortia of Nitrosocosmicus-Affiliated AOA and Nitrospira-Affiliated NOB"
+    year: 2021
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Differential NH4 affinity of comammox vs AOA vs AOB; enrichment conditions used to infer Ks."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1021/acs.est.2c02081"
+    pmc_id: "PMC9387530"
+    title: "Integrating Genome-Resolved Metagenomics with Trait-Based Process Modeling to Determine Biokinetics of Distinct Nitrifying Communities within Activated Sludge"
+    year: 2022
+    journal: "Environmental Science & Technology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Population-specific mu_max, Ks, yield for distinct nitrifiers (comammox vs canonical) in activated sludge."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1128/AEM.00330-11"
+    pmc_id: "PMC3209145"
+    title: "Low-dissolved-oxygen nitrifying systems exploit ammonia-oxidizing bacteria with unusually high yields"
+    year: 2011
+    journal: "Applied and Environmental Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Low-DO AOB yields and K_O2 implications — Y_XS and O2 half-saturation at low DO."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.3389/fmicb.2019.00192"
+    pmc_id: "PMC6381052"
+    title: "13C Incorporation as a Tool to Estimate Biomass Yields in Thermophilic and Mesophilic Nitrifying Communities"
+    year: 2019
+    journal: "Frontiers in Microbiology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Y_XS measurements for AOB and NOB at different temperatures using 13C isotope method."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1007/s13205-022-03433-7"
+    pmc_id: "PMC9768056"
+    title: "Long-term post-storage reactivation of a nitrifying sludge in a sequential batch reactor: physiological and kinetic evaluation"
+    year: 2023
+    journal: "3 Biotech"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Nitrification kinetics (SAOR, SNOR, mu_max) in nitrifying sludge after storage — AOB/NOB rate parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1111/1751-7915.12284"
+    pmc_id: "PMC4408191"
+    title: "A preliminary and qualitative study of resource ratio theory to nitrifying lab-scale bioreactors"
+    year: 2015
+    journal: "Microbial Biotechnology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Explicit Monod kinetics in lab-scale nitrifying reactors; growth parameters, resource supply, diffusion."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1007/s00253-024-13306-z"
+    pmc_id: "PMC11502555"
+    title: "Comammox Nitrospira was the dominant ammonia oxidizer in an acidic biofilm reactor at pH 5.5 and pH 5"
+    year: 2024
+    journal: "Applied Microbiology and Biotechnology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Comammox acidic biofilm reactor; activity/abundance and affinity under acid conditions."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1021/acs.est.4c04375"
+    pmc_id: "PMC11271001"
+    title: "Metatranscriptomic Analysis Reveals Synergistic Activities of Comammox and Anammox Bacteria in Full-Scale Attached Growth Nitrogen Removal System"
+    year: 2024
+    journal: "Environmental Science & Technology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "IFAS biofilm comammox+anammox activity vs DO; K_O2 switching behavior for comammox."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1021/acs.est.2c09223"
+    pmc_id: "PMC10061930"
+    title: "Co-Occurrence and Cooperation between Comammox and Anammox Bacteria in a Full-Scale Attached Growth Municipal Wastewater Treatment Process"
+    year: 2023
+    journal: "Environmental Science & Technology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Intrinsic and extant kinetics for comammox+AOB+anammox in IFAS biofilm — full-scale biofilm kinetic dataset."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1016/j.wroa.2024.100237"
+    pmc_id: "PMC11327836"
+    title: "A positive contribution to nitrogen removal by a novel NOB in a full-scale duck wastewater treatment system"
+    year: 2024
+    journal: "Water Research X"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Novel NOB in full-scale biofilm/sludge; activity rates."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1093/femsec/fiaf032"
+    pmc_id: "PMC11995701"
+    title: "High diversity of nitrifying bacteria and archaea in biofilms from a subsea tunnel"
+    year: 2025
+    journal: "FEMS Microbiology Ecology"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Community composition of AOA/AOB/NOB/comammox in biofilms — defines species mixes for iDynoMiCS guilds."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1093/ismeco/ycae129"
+    pmc_id: "PMC11561398"
+    title: "Growth of soil ammonia-oxidizing archaea on air-exposed solid surface"
+    year: 2024
+    journal: "ISME Communications"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "AOA (Nitrososphaera, Nitrosotenuis) growth rates on surfaces vs liquid — biofilm-relevant AOA parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1007/s11356-017-0615-9"
+    pmc_id: "PMC5766719"
+    title: "Performance and microbial characteristics of biomass in a full-scale aerobic granular sludge wastewater treatment plant"
+    year: 2018
+    journal: "Environmental Science and Pollution Research"
+    access: open_pmc
+    decision: screened_in
+    decision_reason: "Full-scale AGS; biomass yield (0.6 g MLVSS/g COD) and community — heterotroph-nitrifier granule yields."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  # ---------- canonical classics (likely paywalled — need Cornell access) ----------
+
+  - doi: "10.1002/bit.260431118"
+    title: "Mathematical modeling of biofilms in porous media and multispecies biofilm systems"
+    year: 1994
+    journal: "Biotechnology and Bioengineering"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Wanner & Reichert biofilm model — canonical 1-D multispecies framework; D_biofilm/D_water ratio and biofilm density conventions still used in iDynoMiCS."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1002/bit.10186"
+    title: "A new combined differential-discrete cellular automaton approach for biofilm modeling: application for growth in gel beads"
+    year: 1998
+    journal: "Biotechnology and Bioengineering"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Picioreanu, van Loosdrecht, Heijnen — foundational cellular automaton biofilm model; AOB/NOB parameter sets reused in later iDynoMiCS work."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1099/00221287-147-11-2897"
+    title: "Individual-based modelling of biofilms"
+    year: 2001
+    journal: "Microbiology (SGM)"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Kreft, Picioreanu, Wimpenny, van Loosdrecht — original IbM paper underlying iDynoMiCS; reference nitrifier parameter values (mu_max, Ks, Y, b)."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1111/j.1462-2920.2011.02414.x"
+    title: "iDynoMiCS: next-generation individual-based modelling of biofilms"
+    year: 2011
+    journal: "Environmental Microbiology"
+    access: open_other
+    decision: screened_in
+    decision_reason: "Lardon/Merkey/Martins/Doerr/Picioreanu/Kreft — iDynoMiCS methods paper; default nitrifier parameter inputs for target simulator."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1016/S0043-1354(99)00190-7"
+    title: "A three-dimensional numerical study on the correlation of spatial structure, hydrodynamic conditions, and mass transfer and conversion in biofilms"
+    year: 2000
+    journal: "Water Research"
+    access: paywalled_no_access
+    decision: screened_in
+    decision_reason: "Picioreanu et al. — D_biofilm/D_liquid ratio and oxygen penetration depth conventions for nitrifying biofilms."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1002/bit.260430307"
+    title: "Influence of biofilm diffusion limitation on the dynamics of nitrifying reactors"
+    year: 1994
+    journal: "Biotechnology and Bioengineering"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Wanner-style biofilm-reactor study of nitrifier diffusion limitations; K_O2 / K_NH4 at biofilm scale."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.2166/wst.2006.221"
+    title: "Mathematical modeling of biofilms (IWA Scientific and Technical Report No. 18)"
+    year: 2006
+    journal: "Water Science and Technology / IWA Publishing"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Wanner/Eberl/Morgenroth/Noguera/Picioreanu/Rittmann/van Loosdrecht — IWA STR 18 consensus biofilm parameters; canonical AOB/NOB Ks, mu_max, Y, b."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1002/bit.260391202"
+    title: "Nitrification kinetics and expression of bacterial stress genes in retention-suspension cultures of Nitrosomonas europaea"
+    year: 1992
+    journal: "Biotechnology and Bioengineering"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Classic N. europaea kinetic dataset (Ks, mu_max, Y) cited in most AOB modeling papers."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1016/0043-1354(84)90112-3"
+    title: "Kinetics of Nitrosomonas europaea and Nitrobacter winogradskyi in biofilm and suspended culture"
+    year: 1984
+    journal: "Water Research"
+    access: paywalled_no_access
+    decision: screened_in
+    decision_reason: "Foundational paper comparing AOB and NOB kinetics in biofilm vs suspended; cited in Rittmann/McCarty as primary parameter source."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+    verify_doi: true
+
+  - doi: "10.1038/nature16461"
+    title: "Complete nitrification by Nitrospira bacteria"
+    year: 2015
+    journal: "Nature"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "Daims et al. — comammox Nitrospira discovery; kinetic and physiological context for comammox parameters."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"
+
+  - doi: "10.1038/nature16459"
+    title: "Complete nitrification by a single microorganism"
+    year: 2015
+    journal: "Nature"
+    access: paywalled_likely
+    decision: screened_in
+    decision_reason: "van Kessel et al. — companion comammox discovery; comammox identity and growth in enrichment biofilm."
+    decision_date: "2026-04-18"
+    decision_by: "pmc_search_agent_v1"

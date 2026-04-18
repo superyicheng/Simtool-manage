@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simtool</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="shell">
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-title">Simtool</div>
+        <div class="brand-sub">Nitrifying biofilm · v0.1.0</div>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-item active" data-view="metamodel">
+        <span class="nav-icon">◉</span><span>MetaModel</span>
+      </button>
+      <button class="nav-item" data-view="data">
+        <span class="nav-icon">▤</span><span>Data</span>
+      </button>
+      <button class="nav-item" data-view="search">
+        <span class="nav-icon">⌕</span><span>Search papers</span>
+      </button>
+      <button class="nav-item" data-view="recommend">
+        <span class="nav-icon">↯</span><span>Simplify</span>
+      </button>
+      <button class="nav-item" data-view="adjust">
+        <span class="nav-icon">✎</span><span>Adjust</span>
+      </button>
+      <button class="nav-item" data-view="simulate">
+        <span class="nav-icon">▶</span><span>Simulate</span>
+      </button>
+    </nav>
+    <div class="footer">
+      <div id="backend-status" class="status">connecting…</div>
+    </div>
+  </aside>
+  <main id="main">
+    <!-- view: metamodel -->
+    <section class="view active" id="view-metamodel">
+      <header class="view-header">
+        <h1>MetaModel</h1>
+        <p class="subtitle">Reconciled parameters for nitrifying biofilms — auto-extracted from the 9-paper PMC corpus.</p>
+      </header>
+      <div class="card-row">
+        <div class="stat-card"><div class="stat-value" id="stat-params">—</div><div class="stat-label">reconciled parameters</div></div>
+        <div class="stat-card"><div class="stat-value" id="stat-dois">—</div><div class="stat-label">supporting papers</div></div>
+        <div class="stat-card"><div class="stat-value" id="stat-conflicts">—</div><div class="stat-label">flagged conflicts</div></div>
+        <div class="stat-card"><div class="stat-value" id="stat-quality">—</div><div class="stat-label">high-quality params</div></div>
+      </div>
+      <div class="section-title">Overview picture</div>
+      <img id="plot-overview" class="plot" alt="Metamodel overview">
+      <div class="section-title">Reconciled parameter table <span class="muted" id="mm-filter-hint"></span></div>
+      <div class="controls">
+        <input type="search" id="mm-search" placeholder="Filter by parameter, species, substrate…">
+        <select id="mm-quality-filter">
+          <option value="">All qualities</option>
+          <option value="high">High</option>
+          <option value="moderate">Moderate</option>
+          <option value="low">Low</option>
+          <option value="very_low">Very low</option>
+        </select>
+        <label class="check"><input type="checkbox" id="mm-conflict-only"> conflicts only</label>
+      </div>
+      <div class="table-wrap">
+        <table id="mm-table">
+          <thead><tr>
+            <th>parameter</th><th>species</th><th>substrate</th><th>value</th>
+            <th>unit</th><th>quality</th><th>papers</th><th>conflict</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- view: data -->
+    <section class="view" id="view-data">
+      <header class="view-header">
+        <h1>Data</h1>
+        <p class="subtitle">Raw extractions — the evidence behind each reconciled parameter.</p>
+      </header>
+      <div class="grid-2">
+        <div>
+          <div class="section-title">Papers</div>
+          <ul class="paper-list" id="paper-list"></ul>
+        </div>
+        <div>
+          <div class="section-title">Extractions <span class="muted" id="data-selected-doi"></span></div>
+          <div class="table-wrap">
+            <table id="data-table">
+              <thead><tr>
+                <th>param</th><th>value</th><th>unit</th><th>species</th>
+                <th>substrate</th><th>method</th><th>page</th><th>excerpt</th>
+              </tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- view: search -->
+    <section class="view" id="view-search">
+      <header class="view-header">
+        <h1>Search papers</h1>
+        <p class="subtitle">Live PMC search (NCBI E-utilities). Use this to find new candidate sources for the meta-model.</p>
+      </header>
+      <div class="controls">
+        <input type="search" id="search-query" placeholder="e.g. comammox nitrospira kinetics"
+               value="nitrifying biofilm kinetics"
+               style="flex:1 1 auto; min-width: 320px;">
+        <button class="primary" id="search-go">Search</button>
+      </div>
+      <div id="search-status" class="muted" style="margin:0 0 12px;"></div>
+      <div class="table-wrap">
+        <table id="search-table">
+          <thead><tr><th>PMC</th><th>Title</th><th>Journal</th><th>Year</th><th>Authors</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- view: recommend -->
+    <section class="view" id="view-recommend">
+      <header class="view-header">
+        <h1>Simplify the model</h1>
+        <p class="subtitle">Pick what you need and what you can drop. Implications of simplification are surfaced explicitly below.</p>
+      </header>
+      <div class="grid-2">
+        <div>
+          <div class="section-title">Required phenomena</div>
+          <div class="chips" id="req-phenomena">
+            <label><input type="checkbox" value="ammonium_oxidation" checked> ammonium oxidation</label>
+            <label><input type="checkbox" value="nitrite_oxidation" checked> nitrite oxidation</label>
+            <label><input type="checkbox" value="oxygen_transport"> oxygen transport</label>
+            <label><input type="checkbox" value="eps_production"> EPS production</label>
+            <label><input type="checkbox" value="detachment"> detachment</label>
+            <label><input type="checkbox" value="anammox"> anammox</label>
+          </div>
+          <div class="section-title">Excluded phenomena</div>
+          <div class="chips" id="exc-phenomena">
+            <label><input type="checkbox" value="spatial_heterogeneity"> spatial heterogeneity</label>
+            <label><input type="checkbox" value="ph_dynamics"> pH dynamics</label>
+            <label><input type="checkbox" value="temperature_dependence"> temperature dependence</label>
+          </div>
+          <div class="section-title">Compute budget + horizon</div>
+          <div class="fields">
+            <label>max wall time (hrs) <input type="number" id="max-hours" min="0" step="0.5" value="1"></label>
+            <label>max memory (GB) <input type="number" id="max-gb" min="0" step="0.5" value="4"></label>
+            <label>time horizon (days) <input type="number" id="horizon-days" min="0.1" step="0.5" value="5"></label>
+          </div>
+          <button class="primary" id="recommend-go">Recommend simplified model</button>
+        </div>
+        <div>
+          <div class="section-title">Recommendation</div>
+          <div id="recommend-output" class="output-panel">
+            <p class="muted">Submit constraints to see a recommendation and its implications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- view: adjust -->
+    <section class="view" id="view-adjust">
+      <header class="view-header">
+        <h1>Adjust</h1>
+        <p class="subtitle">Tell the system how you want to modify the model. It traces which meta-model components the modification depends on.</p>
+      </header>
+      <div class="grid-2">
+        <div>
+          <div class="section-title">Kind of change</div>
+          <div class="fields" style="grid-template-columns: 1fr 1fr;">
+            <label>kind
+              <select id="adjust-kind">
+                <option value="change_parameter">change_parameter</option>
+                <option value="add_process">add_process</option>
+                <option value="add_entity">add_entity</option>
+                <option value="change_scope">change_scope</option>
+                <option value="remove_process">remove_process</option>
+              </select>
+            </label>
+            <label>target_id (e.g. K_s) <input type="text" id="adjust-target" placeholder="K_s"></label>
+          </div>
+          <div class="section-title">Scope phenomena (for change_scope)</div>
+          <div class="chips" id="adjust-req">
+            <label><input type="checkbox" value="ammonium_oxidation" checked> ammonium oxidation</label>
+            <label><input type="checkbox" value="nitrite_oxidation"> nitrite oxidation</label>
+            <label><input type="checkbox" value="anammox"> anammox</label>
+            <label><input type="checkbox" value="eps_production"> EPS production</label>
+          </div>
+          <div class="section-title">Note (natural language)</div>
+          <textarea id="adjust-desc" rows="3" placeholder="e.g. 'Run at 15°C instead of 25°C' or 'Use a 10x lower K_s for AOB on NH4'"></textarea>
+          <button class="primary" id="adjust-go" style="margin-top:10px;">Propose adjustment</button>
+        </div>
+        <div>
+          <div class="section-title">Adjustment proposal</div>
+          <div id="adjust-output" class="output-panel">
+            <p class="muted">Submit a modification description above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- view: simulate -->
+    <section class="view" id="view-simulate">
+      <header class="view-header">
+        <h1>Simulate</h1>
+        <p class="subtitle">Run the current model. Live progress streams in; on completion the final
+          time series are compared to the meta-model's literature ranges.</p>
+      </header>
+      <div class="controls">
+        <label>framework
+          <select id="framework-select">
+            <option value="demo">demo (synthetic)</option>
+          </select>
+        </label>
+        <label>steps <input type="number" id="run-steps" min="4" max="120" value="12" style="width:80px;"></label>
+        <button class="primary" id="run-start">Start run</button>
+        <button id="run-cancel" disabled>Cancel</button>
+        <span class="muted" id="run-id-label"></span>
+        <span id="run-status" class="pill">idle</span>
+      </div>
+      <div id="framework-status" class="muted" style="margin-bottom:10px;">checking frameworks…</div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div id="progress-fill"></div></div>
+        <div id="progress-line" class="muted">—</div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="section-title">Live observables</div>
+          <div id="live-observables" class="observables">—</div>
+        </div>
+        <div>
+          <div class="section-title">Analysis vs. meta-model</div>
+          <div id="analysis-output" class="output-panel">
+            <p class="muted">Complete a run to see analysis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-title">Final output time series</div>
+      <div id="series-charts" class="series-charts"></div>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

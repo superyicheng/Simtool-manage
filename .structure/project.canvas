@@ -1,0 +1,1476 @@
+{
+  "nodes": [
+    {
+      "id": "node-simtool",
+      "type": "file",
+      "file": ".structure/blocks/simtool.md",
+      "x": 0,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-connector",
+      "type": "file",
+      "file": ".structure/blocks/connector.md",
+      "x": 260,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ir_module",
+      "type": "file",
+      "file": ".structure/blocks/ir_module.md",
+      "x": 520,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-parameter_binding",
+      "type": "file",
+      "file": ".structure/blocks/parameter_binding.md",
+      "x": 780,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-distribution",
+      "type": "file",
+      "file": ".structure/blocks/distribution.md",
+      "x": 1040,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-agent_population",
+      "type": "file",
+      "file": ".structure/blocks/agent_population.md",
+      "x": 1300,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-solute",
+      "type": "file",
+      "file": ".structure/blocks/solute.md",
+      "x": 1560,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-spatial_domain",
+      "type": "file",
+      "file": ".structure/blocks/spatial_domain.md",
+      "x": 1820,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-surface",
+      "type": "file",
+      "file": ".structure/blocks/surface.md",
+      "x": 2080,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-monod_growth_process",
+      "type": "file",
+      "file": ".structure/blocks/monod_growth_process.md",
+      "x": 2340,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-first_order_decay_process",
+      "type": "file",
+      "file": ".structure/blocks/first_order_decay_process.md",
+      "x": 2600,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-maintenance_process",
+      "type": "file",
+      "file": ".structure/blocks/maintenance_process.md",
+      "x": 2860,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-diffusion_process",
+      "type": "file",
+      "file": ".structure/blocks/diffusion_process.md",
+      "x": 3120,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-eps_production_process",
+      "type": "file",
+      "file": ".structure/blocks/eps_production_process.md",
+      "x": 3380,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-custom_process",
+      "type": "file",
+      "file": ".structure/blocks/custom_process.md",
+      "x": 3640,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-boundary_condition",
+      "type": "file",
+      "file": ".structure/blocks/boundary_condition.md",
+      "x": 3900,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-initial_condition",
+      "type": "file",
+      "file": ".structure/blocks/initial_condition.md",
+      "x": 4160,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-sampling_spec",
+      "type": "file",
+      "file": ".structure/blocks/sampling_spec.md",
+      "x": 4420,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-observable",
+      "type": "file",
+      "file": ".structure/blocks/observable.md",
+      "x": 4680,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-compute_budget",
+      "type": "file",
+      "file": ".structure/blocks/compute_budget.md",
+      "x": 4940,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption_hint",
+      "type": "file",
+      "file": ".structure/blocks/assumption_hint.md",
+      "x": 5200,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-scientific_model",
+      "type": "file",
+      "file": ".structure/blocks/scientific_model.md",
+      "x": 5460,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-scientific_model_entity_ids",
+      "type": "file",
+      "file": ".structure/blocks/scientific_model_entity_ids.md",
+      "x": 5720,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-scientific_model_surface_ids",
+      "type": "file",
+      "file": ".structure/blocks/scientific_model_surface_ids.md",
+      "x": 5980,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-plugin_interface",
+      "type": "file",
+      "file": ".structure/blocks/plugin_interface.md",
+      "x": 6240,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-doc_sources",
+      "type": "file",
+      "file": ".structure/blocks/doc_sources.md",
+      "x": 6500,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-validation_issue",
+      "type": "file",
+      "file": ".structure/blocks/validation_issue.md",
+      "x": 6760,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-validation_report",
+      "type": "file",
+      "file": ".structure/blocks/validation_report.md",
+      "x": 7020,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-validation_report_errors",
+      "type": "file",
+      "file": ".structure/blocks/validation_report_errors.md",
+      "x": 7280,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-lowered_artifact",
+      "type": "file",
+      "file": ".structure/blocks/lowered_artifact.md",
+      "x": 7540,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_handle",
+      "type": "file",
+      "file": ".structure/blocks/run_handle.md",
+      "x": 7800,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-framework_plugin_protocol",
+      "type": "file",
+      "file": ".structure/blocks/framework_plugin_protocol.md",
+      "x": 8060,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-skill_module",
+      "type": "file",
+      "file": ".structure/blocks/skill_module.md",
+      "x": 8320,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-source_kind",
+      "type": "file",
+      "file": ".structure/blocks/source_kind.md",
+      "x": 8580,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-source_ref",
+      "type": "file",
+      "file": ".structure/blocks/source_ref.md",
+      "x": 8840,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-grammar_type",
+      "type": "file",
+      "file": ".structure/blocks/grammar_type.md",
+      "x": 9100,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-grammar_field",
+      "type": "file",
+      "file": ".structure/blocks/grammar_field.md",
+      "x": 9360,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-grammar_element",
+      "type": "file",
+      "file": ".structure/blocks/grammar_element.md",
+      "x": 9620,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-grammar",
+      "type": "file",
+      "file": ".structure/blocks/grammar.md",
+      "x": 9880,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-annotation",
+      "type": "file",
+      "file": ".structure/blocks/annotation.md",
+      "x": 10140,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-example",
+      "type": "file",
+      "file": ".structure/blocks/example.md",
+      "x": 10400,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-pipeline_stage",
+      "type": "file",
+      "file": ".structure/blocks/pipeline_stage.md",
+      "x": 10660,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-stage_report",
+      "type": "file",
+      "file": ".structure/blocks/stage_report.md",
+      "x": 10920,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-skill_file",
+      "type": "file",
+      "file": ".structure/blocks/skill_file.md",
+      "x": 11180,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-skill_file_get_element",
+      "type": "file",
+      "file": ".structure/blocks/skill_file_get_element.md",
+      "x": 11440,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-skill_file_get_annotations_for",
+      "type": "file",
+      "file": ".structure/blocks/skill_file_get_annotations_for.md",
+      "x": 11700,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumptions_module",
+      "type": "file",
+      "file": ".structure/blocks/assumptions_module.md",
+      "x": 11960,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption_category",
+      "type": "file",
+      "file": ".structure/blocks/assumption_category.md",
+      "x": 12220,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption_severity",
+      "type": "file",
+      "file": ".structure/blocks/assumption_severity.md",
+      "x": 12480,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption_status",
+      "type": "file",
+      "file": ".structure/blocks/assumption_status.md",
+      "x": 12740,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption",
+      "type": "file",
+      "file": ".structure/blocks/assumption.md",
+      "x": 13000,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-assumption_ledger",
+      "type": "file",
+      "file": ".structure/blocks/assumption_ledger.md",
+      "x": 13260,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_add",
+      "type": "file",
+      "file": ".structure/blocks/ledger_add.md",
+      "x": 13520,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_approve",
+      "type": "file",
+      "file": ".structure/blocks/ledger_approve.md",
+      "x": 13780,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_reject",
+      "type": "file",
+      "file": ".structure/blocks/ledger_reject.md",
+      "x": 14040,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_pending",
+      "type": "file",
+      "file": ".structure/blocks/ledger_pending.md",
+      "x": 14300,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_rejected",
+      "type": "file",
+      "file": ".structure/blocks/ledger_rejected.md",
+      "x": 14560,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_is_ready_to_run",
+      "type": "file",
+      "file": ".structure/blocks/ledger_is_ready_to_run.md",
+      "x": 14820,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-ledger_blocking_reasons",
+      "type": "file",
+      "file": ".structure/blocks/ledger_blocking_reasons.md",
+      "x": 15080,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-runs_module",
+      "type": "file",
+      "file": ".structure/blocks/runs_module.md",
+      "x": 15340,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_status",
+      "type": "file",
+      "file": ".structure/blocks/run_status.md",
+      "x": 15600,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_layout",
+      "type": "file",
+      "file": ".structure/blocks/run_layout.md",
+      "x": 15860,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_layout_under",
+      "type": "file",
+      "file": ".structure/blocks/run_layout_under.md",
+      "x": 16120,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_layout_ensure",
+      "type": "file",
+      "file": ".structure/blocks/run_layout_ensure.md",
+      "x": 16380,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-progress_report",
+      "type": "file",
+      "file": ".structure/blocks/progress_report.md",
+      "x": 16640,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-resource_usage",
+      "type": "file",
+      "file": ".structure/blocks/resource_usage.md",
+      "x": 16900,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-artifact",
+      "type": "file",
+      "file": ".structure/blocks/artifact.md",
+      "x": 17160,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-output_bundle",
+      "type": "file",
+      "file": ".structure/blocks/output_bundle.md",
+      "x": 17420,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-run_record",
+      "type": "file",
+      "file": ".structure/blocks/run_record.md",
+      "x": 17680,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-corpus",
+      "type": "file",
+      "file": ".structure/blocks/corpus.md",
+      "x": 17940,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-manifest_module",
+      "type": "file",
+      "file": ".structure/blocks/manifest_module.md",
+      "x": 18200,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-access_status",
+      "type": "file",
+      "file": ".structure/blocks/access_status.md",
+      "x": 18460,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-inclusion_decision",
+      "type": "file",
+      "file": ".structure/blocks/inclusion_decision.md",
+      "x": 18720,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-corpus_entry",
+      "type": "file",
+      "file": ".structure/blocks/corpus_entry.md",
+      "x": 18980,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-search_step",
+      "type": "file",
+      "file": ".structure/blocks/search_step.md",
+      "x": 19240,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-prisma_log",
+      "type": "file",
+      "file": ".structure/blocks/prisma_log.md",
+      "x": 19500,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-prisma_log_n_by_decision",
+      "type": "file",
+      "file": ".structure/blocks/prisma_log_n_by_decision.md",
+      "x": 19760,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-load_log",
+      "type": "file",
+      "file": ".structure/blocks/load_log.md",
+      "x": 20020,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-dump_log",
+      "type": "file",
+      "file": ".structure/blocks/dump_log.md",
+      "x": 20280,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetcher_base",
+      "type": "file",
+      "file": ".structure/blocks/fetcher_base.md",
+      "x": 20540,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetch_status",
+      "type": "file",
+      "file": ".structure/blocks/fetch_status.md",
+      "x": 20800,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetch_result",
+      "type": "file",
+      "file": ".structure/blocks/fetch_result.md",
+      "x": 21060,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetch_summary",
+      "type": "file",
+      "file": ".structure/blocks/fetch_summary.md",
+      "x": 21320,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetch_summary_by_status",
+      "type": "file",
+      "file": ".structure/blocks/fetch_summary_by_status.md",
+      "x": 21580,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-build_session",
+      "type": "file",
+      "file": ".structure/blocks/build_session.md",
+      "x": 21840,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-with_default_timeout",
+      "type": "file",
+      "file": ".structure/blocks/with_default_timeout.md",
+      "x": 22100,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetcher_base_class",
+      "type": "file",
+      "file": ".structure/blocks/fetcher_base_class.md",
+      "x": 22360,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetcher_base_init",
+      "type": "file",
+      "file": ".structure/blocks/fetcher_base_init.md",
+      "x": 22620,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetcher_base_fetch",
+      "type": "file",
+      "file": ".structure/blocks/fetcher_base_fetch.md",
+      "x": 22880,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fetch_corpus",
+      "type": "file",
+      "file": ".structure/blocks/fetch_corpus.md",
+      "x": 23140,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-default_contact_email",
+      "type": "file",
+      "file": ".structure/blocks/default_contact_email.md",
+      "x": 23400,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-pmc_fetcher_module",
+      "type": "file",
+      "file": ".structure/blocks/pmc_fetcher_module.md",
+      "x": 23660,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-pmc_fetcher_class",
+      "type": "file",
+      "file": ".structure/blocks/pmc_fetcher_class.md",
+      "x": 23920,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-schema",
+      "type": "file",
+      "file": ".structure/blocks/schema.md",
+      "x": 24180,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-parameter_record_module",
+      "type": "file",
+      "file": ".structure/blocks/parameter_record_module.md",
+      "x": 24440,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-grade_rating",
+      "type": "file",
+      "file": ".structure/blocks/grade_rating.md",
+      "x": 24700,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-extraction_modality",
+      "type": "file",
+      "file": ".structure/blocks/extraction_modality.md",
+      "x": 24960,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-measurement_method",
+      "type": "file",
+      "file": ".structure/blocks/measurement_method.md",
+      "x": 25220,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-span_anchor",
+      "type": "file",
+      "file": ".structure/blocks/span_anchor.md",
+      "x": 25480,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-study_context",
+      "type": "file",
+      "file": ".structure/blocks/study_context.md",
+      "x": 25740,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-extractor_agreement",
+      "type": "file",
+      "file": ".structure/blocks/extractor_agreement.md",
+      "x": 26000,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-parameter_record_class",
+      "type": "file",
+      "file": ".structure/blocks/parameter_record_class.md",
+      "x": 26260,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-idynomics_vocab_module",
+      "type": "file",
+      "file": ".structure/blocks/idynomics_vocab_module.md",
+      "x": 26520,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-vocab_entry",
+      "type": "file",
+      "file": ".structure/blocks/vocab_entry.md",
+      "x": 26780,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-vocab_get",
+      "type": "file",
+      "file": ".structure/blocks/vocab_get.md",
+      "x": 27040,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-vocab_all_ids",
+      "type": "file",
+      "file": ".structure/blocks/vocab_all_ids.md",
+      "x": 27300,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-units",
+      "type": "file",
+      "file": ".structure/blocks/units.md",
+      "x": 27560,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-harmonize_module",
+      "type": "file",
+      "file": ".structure/blocks/harmonize_module.md",
+      "x": 27820,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-pintify",
+      "type": "file",
+      "file": ".structure/blocks/pintify.md",
+      "x": 28080,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-molar_mass_lookup_protocol",
+      "type": "file",
+      "file": ".structure/blocks/molar_mass_lookup_protocol.md",
+      "x": 28340,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-harmonization_result",
+      "type": "file",
+      "file": ".structure/blocks/harmonization_result.md",
+      "x": 28600,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-harmonize_function",
+      "type": "file",
+      "file": ".structure/blocks/harmonize_function.md",
+      "x": 28860,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-settings_module",
+      "type": "file",
+      "file": ".structure/blocks/settings_module.md",
+      "x": 29120,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-get_anthropic_api_key",
+      "type": "file",
+      "file": ".structure/blocks/get_anthropic_api_key.md",
+      "x": 29380,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-set_anthropic_api_key",
+      "type": "file",
+      "file": ".structure/blocks/set_anthropic_api_key.md",
+      "x": 29640,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-clear_anthropic_api_key",
+      "type": "file",
+      "file": ".structure/blocks/clear_anthropic_api_key.md",
+      "x": 29900,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-status_function",
+      "type": "file",
+      "file": ".structure/blocks/status_function.md",
+      "x": 30160,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-require_anthropic_api_key",
+      "type": "file",
+      "file": ".structure/blocks/require_anthropic_api_key.md",
+      "x": 30420,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-cli_module",
+      "type": "file",
+      "file": ".structure/blocks/cli_module.md",
+      "x": 30680,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-cli_main",
+      "type": "file",
+      "file": ".structure/blocks/cli_main.md",
+      "x": 30940,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_suite",
+      "type": "file",
+      "file": ".structure/blocks/test_suite.md",
+      "x": 31200,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_ir_invariants",
+      "type": "file",
+      "file": ".structure/blocks/test_ir_invariants.md",
+      "x": 31460,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_ir_construction",
+      "type": "file",
+      "file": ".structure/blocks/test_ir_construction.md",
+      "x": 31720,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_plugin_protocol",
+      "type": "file",
+      "file": ".structure/blocks/test_plugin_protocol.md",
+      "x": 31980,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-mock_plugin",
+      "type": "file",
+      "file": ".structure/blocks/mock_plugin.md",
+      "x": 32240,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_runs",
+      "type": "file",
+      "file": ".structure/blocks/test_runs.md",
+      "x": 32500,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_skill",
+      "type": "file",
+      "file": ".structure/blocks/test_skill.md",
+      "x": 32760,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_assumptions",
+      "type": "file",
+      "file": ".structure/blocks/test_assumptions.md",
+      "x": 33020,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_fetcher",
+      "type": "file",
+      "file": ".structure/blocks/test_fetcher.md",
+      "x": 33280,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-fake_response",
+      "type": "file",
+      "file": ".structure/blocks/fake_response.md",
+      "x": 33540,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_units",
+      "type": "file",
+      "file": ".structure/blocks/test_units.md",
+      "x": 33800,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    },
+    {
+      "id": "node-test_settings",
+      "type": "file",
+      "file": ".structure/blocks/test_settings.md",
+      "x": 34060,
+      "y": 0,
+      "width": 240,
+      "height": 120
+    }
+  ],
+  "edges": [
+    {
+      "id": "plugin_interface->ir_module",
+      "fromNode": "node-plugin_interface",
+      "toNode": "node-ir_module",
+      "label": "depends"
+    },
+    {
+      "id": "plugin_interface->skill_module",
+      "fromNode": "node-plugin_interface",
+      "toNode": "node-skill_module",
+      "label": "depends"
+    },
+    {
+      "id": "plugin_interface->assumptions_module",
+      "fromNode": "node-plugin_interface",
+      "toNode": "node-assumptions_module",
+      "label": "depends"
+    },
+    {
+      "id": "plugin_interface->runs_module",
+      "fromNode": "node-plugin_interface",
+      "toNode": "node-runs_module",
+      "label": "depends"
+    },
+    {
+      "id": "lowered_artifact->assumption_ledger",
+      "fromNode": "node-lowered_artifact",
+      "toNode": "node-assumption_ledger",
+      "label": "depends"
+    },
+    {
+      "id": "scientific_model->parameter_binding",
+      "fromNode": "node-scientific_model",
+      "toNode": "node-parameter_binding",
+      "label": "depends"
+    },
+    {
+      "id": "scientific_model->agent_population",
+      "fromNode": "node-scientific_model",
+      "toNode": "node-agent_population",
+      "label": "depends"
+    },
+    {
+      "id": "scientific_model->solute",
+      "fromNode": "node-scientific_model",
+      "toNode": "node-solute",
+      "label": "depends"
+    },
+    {
+      "id": "scientific_model->spatial_domain",
+      "fromNode": "node-scientific_model",
+      "toNode": "node-spatial_domain",
+      "label": "depends"
+    },
+    {
+      "id": "scientific_model->surface",
+      "fromNode": "node-scientific_model",
+      "toNode": "node-surface",
+      "label": "depends"
+    },
+    {
+      "id": "parameter_binding->distribution",
+      "fromNode": "node-parameter_binding",
+      "toNode": "node-distribution",
+      "label": "depends"
+    },
+    {
+      "id": "harmonize_function->idynomics_vocab_module",
+      "fromNode": "node-harmonize_function",
+      "toNode": "node-idynomics_vocab_module",
+      "label": "depends"
+    },
+    {
+      "id": "parameter_record_class->idynomics_vocab_module",
+      "fromNode": "node-parameter_record_class",
+      "toNode": "node-idynomics_vocab_module",
+      "label": "depends"
+    },
+    {
+      "id": "fetcher_base_class->manifest_module",
+      "fromNode": "node-fetcher_base_class",
+      "toNode": "node-manifest_module",
+      "label": "depends"
+    },
+    {
+      "id": "pmc_fetcher_class->fetcher_base_class",
+      "fromNode": "node-pmc_fetcher_class",
+      "toNode": "node-fetcher_base_class",
+      "label": "depends"
+    },
+    {
+      "id": "test_plugin_protocol->plugin_interface",
+      "fromNode": "node-test_plugin_protocol",
+      "toNode": "node-plugin_interface",
+      "label": "depends"
+    },
+    {
+      "id": "test_plugin_protocol->ir_module",
+      "fromNode": "node-test_plugin_protocol",
+      "toNode": "node-ir_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_plugin_protocol->skill_module",
+      "fromNode": "node-test_plugin_protocol",
+      "toNode": "node-skill_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_plugin_protocol->assumptions_module",
+      "fromNode": "node-test_plugin_protocol",
+      "toNode": "node-assumptions_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_plugin_protocol->runs_module",
+      "fromNode": "node-test_plugin_protocol",
+      "toNode": "node-runs_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_ir_invariants->ir_module",
+      "fromNode": "node-test_ir_invariants",
+      "toNode": "node-ir_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_ir_construction->ir_module",
+      "fromNode": "node-test_ir_construction",
+      "toNode": "node-ir_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_runs->runs_module",
+      "fromNode": "node-test_runs",
+      "toNode": "node-runs_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_skill->skill_module",
+      "fromNode": "node-test_skill",
+      "toNode": "node-skill_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_assumptions->assumptions_module",
+      "fromNode": "node-test_assumptions",
+      "toNode": "node-assumptions_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_fetcher->fetcher_base",
+      "fromNode": "node-test_fetcher",
+      "toNode": "node-fetcher_base",
+      "label": "depends"
+    },
+    {
+      "id": "test_fetcher->manifest_module",
+      "fromNode": "node-test_fetcher",
+      "toNode": "node-manifest_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_fetcher->pmc_fetcher_module",
+      "fromNode": "node-test_fetcher",
+      "toNode": "node-pmc_fetcher_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_units->harmonize_module",
+      "fromNode": "node-test_units",
+      "toNode": "node-harmonize_module",
+      "label": "depends"
+    },
+    {
+      "id": "test_settings->settings_module",
+      "fromNode": "node-test_settings",
+      "toNode": "node-settings_module",
+      "label": "depends"
+    },
+    {
+      "id": "run_record->run_layout",
+      "fromNode": "node-run_record",
+      "toNode": "node-run_layout",
+      "label": "depends"
+    },
+    {
+      "id": "run_record->output_bundle",
+      "fromNode": "node-run_record",
+      "toNode": "node-output_bundle",
+      "label": "depends"
+    },
+    {
+      "id": "run_record->resource_usage",
+      "fromNode": "node-run_record",
+      "toNode": "node-resource_usage",
+      "label": "depends"
+    },
+    {
+      "id": "output_bundle->artifact",
+      "fromNode": "node-output_bundle",
+      "toNode": "node-artifact",
+      "label": "depends"
+    },
+    {
+      "id": "skill_file->grammar",
+      "fromNode": "node-skill_file",
+      "toNode": "node-grammar",
+      "label": "depends"
+    },
+    {
+      "id": "skill_file->annotation",
+      "fromNode": "node-skill_file",
+      "toNode": "node-annotation",
+      "label": "depends"
+    },
+    {
+      "id": "skill_file->example",
+      "fromNode": "node-skill_file",
+      "toNode": "node-example",
+      "label": "depends"
+    },
+    {
+      "id": "skill_file->stage_report",
+      "fromNode": "node-skill_file",
+      "toNode": "node-stage_report",
+      "label": "depends"
+    },
+    {
+      "id": "grammar->grammar_element",
+      "fromNode": "node-grammar",
+      "toNode": "node-grammar_element",
+      "label": "depends"
+    },
+    {
+      "id": "grammar_element->grammar_field",
+      "fromNode": "node-grammar_element",
+      "toNode": "node-grammar_field",
+      "label": "depends"
+    },
+    {
+      "id": "assumption_ledger->assumption",
+      "fromNode": "node-assumption_ledger",
+      "toNode": "node-assumption",
+      "label": "depends"
+    },
+    {
+      "id": "prisma_log->corpus_entry",
+      "fromNode": "node-prisma_log",
+      "toNode": "node-corpus_entry",
+      "label": "depends"
+    },
+    {
+      "id": "prisma_log->search_step",
+      "fromNode": "node-prisma_log",
+      "toNode": "node-search_step",
+      "label": "depends"
+    },
+    {
+      "id": "fetch_summary->fetch_result",
+      "fromNode": "node-fetch_summary",
+      "toNode": "node-fetch_result",
+      "label": "depends"
+    },
+    {
+      "id": "parameter_record_class->study_context",
+      "fromNode": "node-parameter_record_class",
+      "toNode": "node-study_context",
+      "label": "depends"
+    },
+    {
+      "id": "parameter_record_class->span_anchor",
+      "fromNode": "node-parameter_record_class",
+      "toNode": "node-span_anchor",
+      "label": "depends"
+    },
+    {
+      "id": "parameter_record_class->extractor_agreement",
+      "fromNode": "node-parameter_record_class",
+      "toNode": "node-extractor_agreement",
+      "label": "depends"
+    }
+  ]
+}

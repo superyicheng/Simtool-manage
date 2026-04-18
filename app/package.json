@@ -1,0 +1,14 @@
+{
+  "name": "simtool-desktop",
+  "version": "0.1.0",
+  "description": "Simtool desktop app: local Electron shell around the Python backend.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  }
+}
